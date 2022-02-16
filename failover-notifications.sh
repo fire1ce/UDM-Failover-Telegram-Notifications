@@ -6,7 +6,6 @@
 telegram_bot_API_Token="YOUR_TELEGRAM_BOT_API_TOKEN"
 # Telegram Chat ID
 telegram_chat_id="YOUR_TELEGRAM_CHAT_ID"
-
 # Destenation Host IP
 echo_server_ip="1.1.1.1"
 # Interval between checks (in seconds)
