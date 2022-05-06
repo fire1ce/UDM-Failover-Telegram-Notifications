@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ### Config ###
 
@@ -44,10 +44,18 @@ telegram_notification=$(
   curl -s -X GET "https://api.telegram.org/bot${telegram_bot_API_Token}/sendMessage?chat_id=${telegram_chat_id}" \
     --data-urlencode "text=$start_message"
 )
-if [[ ${telegram_notification=} == *"\"ok\":false"* ]]; then
+# if [[ ${telegram_notification=} == *"\"ok\":false"* ]]; then
+#   echo "Error! Telegram notification failed"
+#   echo ${telegram_notification=}
+# fi
+
+case "$telegram_notification" in
+*"\"ok\":false"*)
   echo "Error! Telegram notification failed"
-  echo ${telegram_notification=}
-fi
+  echo ${telegram_notification}
+  ;;
+*) ;;
+esac
 
 # Loop to check if the current WAN interface name has changed
 while true; do
@@ -85,10 +93,13 @@ while true; do
       curl -s -X GET "https://api.telegram.org/bot${telegram_bot_API_Token}/sendMessage?chat_id=${telegram_chat_id}" \
         --data-urlencode "text=$message"
     )
-    if [[ ${telegram_notification=} == *"\"ok\":false"* ]]; then
+    case "$telegram_notification" in
+    *"\"ok\":false"*)
       echo "Error! Telegram notification failed"
-      echo ${telegram_notification=}
-    fi
+      echo ${telegram_notification}
+      ;;
+    *) ;;
+    esac
     interface_name=$current_wan_interface_name
   fi
   sleep $run_interval

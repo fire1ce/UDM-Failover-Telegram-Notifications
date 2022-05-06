@@ -7,12 +7,12 @@ This can be accomplished with a boot script. Flow this guide: [UDM / UDMPro Boot
 
 ## Compatibility
 
-  * Tested on UDM PRO
+- Tested on UDM PRO
 
 ## Installation
 
 ```bash
-curl https://raw.githubusercontent.com/fire1ce/UDMP-Failover-Telegram-Notifications/main/install.sh | bash 
+curl https://raw.githubusercontent.com/fire1ce/UDMP-Failover-Telegram-Notifications/main/install.sh | sh
 ```
 
 Set your Telegram Chat ID and Bot API Key at
@@ -30,16 +30,15 @@ Set your Telegram Chat ID and Bot API Key at
 | echo_server_ip         | IP of a server to test what interface is active (Default 1.1.1.1) |
 | run_interval           | Interval to run a failover check (Default 60 seconds)             |
 
-
 ## Uninstall
 
-Delete the __UDMP-Failover-Telegram-Notifications__ folder
+Delete the **UDMP-Failover-Telegram-Notifications** folder
 
 ```bash
 rm -rf /mnt/data/UDMP-Failover-Telegram-Notifications
 ```
 
-Delete on boot script  file
+Delete on boot script file
 
 ```bash
 rm -rf /mnt/data/on_boot.d/99-failover-telegram-notifications.sh
@@ -55,5 +54,6 @@ Manual run to test notifications:
 /mnt/data/UDMP-Failover-Telegram-Notifications/failover-notifications.sh
 ```
 
-__It's strongly recommended to perform a reboot in order to check the on boot initialization of the notifications__
+**It's strongly recommended to perform a reboot in order to check the on boot initialization of the notifications**
+
 # UDMP-Failover-Telegram-Notifications

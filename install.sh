@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rm -rf /mnt/data/UDMP-Failover-Telegram-Notifications
 mkdir /mnt/data/UDMP-Failover-Telegram-Notifications
