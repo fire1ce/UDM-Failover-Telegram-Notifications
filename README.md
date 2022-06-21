@@ -1,4 +1,4 @@
-# UDMP Failover Telegram Notifications
+# UDM Failover Telegram Notifications
 
 ## Persistence on Reboot
 
