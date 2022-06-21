@@ -55,5 +55,3 @@ Manual run to test notifications:
 ```
 
 **It's strongly recommended to perform a reboot in order to check the on boot initialization of the notifications**
-
-# UDMP-Failover-Telegram-Notifications
