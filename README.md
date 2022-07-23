@@ -12,7 +12,7 @@ This can be accomplished with a boot script. Flow this guide: [UDM / UDMPro Boot
 ## Installation
 
 ```bash
-curl https://raw.githubusercontent.com/fire1ce/UDM-Failover-Telegram-Notifications/main/install.sh | sh
+curl -s https://raw.githubusercontent.com/fire1ce/UDM-Failover-Telegram-Notifications/main/install.sh | sh
 ```
 
 Set your Telegram Chat ID and Bot API Key at
