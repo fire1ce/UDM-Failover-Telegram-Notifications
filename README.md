@@ -7,7 +7,7 @@ This can be accomplished with a boot script. Flow this guide: [UDM / UDMPro Boot
 
 ## Compatibility
 
-- Tested on UDM PRO
+- Tested on [UDM PRO][amz-udm-pro-url]
 
 ## Installation
 
@@ -55,3 +55,7 @@ Manual run to test notifications:
 ```
 
 **It's strongly recommended to perform a reboot in order to check the on boot initialization of the notifications**
+
+<!-- --- -->
+
+[amz-udm-pro-url]: https://amzn.to/3J4fezk 'Amazon Unifi UDM Pro'
