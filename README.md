@@ -21,8 +21,11 @@ curl -s https://raw.githubusercontent.com/fire1ce/UDM-Failover-Telegram-Notifica
 
 Set your Telegram Chat ID and Bot API Key at
 
+$DATA_DIR for 1.x = /mnt/data
+$DATA_DIR for 2.x and 3.x = /data
+
 ```bash
-/mnt/data/UDMP-Failover-Telegram-Notifications/failover-notifications.sh
+$DATA_DIR/UDMP-Failover-Telegram-Notifications/failover-notifications.sh
 ```
 
 ### Config
@@ -39,13 +42,13 @@ Set your Telegram Chat ID and Bot API Key at
 Delete the **UDMP-Failover-Telegram-Notifications** folder
 
 ```bash
-rm -rf /mnt/data/UDMP-Failover-Telegram-Notifications
+rm -rf $DATA_DIR/UDMP-Failover-Telegram-Notifications
 ```
 
 Delete on boot script file
 
 ```bash
-rm -rf /mnt/data/on_boot.d/99-failover-telegram-notifications.sh
+rm -rf $DATA_DIR/on_boot.d/99-failover-telegram-notifications.sh
 ```
 
 ## Usage
@@ -55,7 +58,7 @@ At boot the script with create a cronjob that will run once. This is done to pre
 Manual run to test notifications:
 
 ```bash
-/mnt/data/UDMP-Failover-Telegram-Notifications/failover-notifications.sh
+$DATA_DIR/UDMP-Failover-Telegram-Notifications/failover-notifications.sh
 ```
 
 **It's strongly recommended to perform a reboot in order to check the on boot initialization of the notifications**
