@@ -62,7 +62,7 @@ while true; do
   current_wan_interface_name=$(get_current_wan_interface_name)
 
   # if the current wan interface name is none then exit this loop and start over
-  if [ "$current_wan_interface_name" == "None" ]; then
+  if [ $($current_wan_interface_name) == "None" ]; then
     echo "Error! Network is unreachable"
     interface_name=$current_wan_interface_name
     sleep $run_interval
@@ -70,7 +70,7 @@ while true; do
   fi
 
   # if the current WAN interface name is not the same as the initial interface name, then send a message to the Telegram chat
-  if [ "$current_wan_interface_name" != "$interface_name" ]; then
+  if [ $($current_wan_interface_name) != $($interface_name) ]; then
     current_wan_interface_external_ip=$(get_current_wan_interface_external_ip)
     # if the current WAN external ip is none then exit this loop and start over
     if [ $current_wan_interface_external_ip == "None" ]; then
