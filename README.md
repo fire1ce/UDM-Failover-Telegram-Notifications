@@ -1,5 +1,9 @@
 # UDM Failover Telegram Notifications
 
+## Changelog
+
+- 2023-02-22 - Added support for multiple UDM versions 1.x, 2.x and 3.x
+
 ## Persistence on Reboot
 
 This script need to run every time the system is rebooted since the UDM overwrites crons every boot.

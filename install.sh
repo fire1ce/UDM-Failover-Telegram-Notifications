@@ -1,10 +1,28 @@
 #!/bin/sh
 
-rm -rf /mnt/data/UDMP-Failover-Telegram-Notifications
-mkdir /mnt/data/UDMP-Failover-Telegram-Notifications
+# Get DataDir location
+DATA_DIR="$DATA_DIR"
+case "$(ubnt-device-info firmware || true)" in
+1*)
+  DATA_DIR="$DATA_DIR"
+  ;;
+2*)
+  DATA_DIR="/data"
+  ;;
+3*)
+  DATA_DIR="/data"
+  ;;
+*)
+  echo "ERROR: No persistent storage found." 1>&2
+  exit 1
+  ;;
+esac
 
-on_boot_script="/mnt/data/on_boot.d/99-failover-telegram-notifications.sh"
-failover_notifications_script="/mnt/data/UDMP-Failover-Telegram-Notifications/failover-notifications.sh"
+rm -rf $DATA_DIR/UDMP-Failover-Telegram-Notifications
+mkdir $DATA_DIR/UDMP-Failover-Telegram-Notifications
+
+on_boot_script="$DATA_DIR/on_boot.d/99-failover-telegram-notifications.sh"
+failover_notifications_script="$DATA_DIR/UDMP-Failover-Telegram-Notifications/failover-notifications.sh"
 
 curl -sO https://raw.githubusercontent.com/fire1ce/UDM-Failover-Telegram-Notifications/main/99-failover-telegram-notifications.sh
 mv 99-failover-telegram-notifications.sh $on_boot_script
