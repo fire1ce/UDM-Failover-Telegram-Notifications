@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 2023-08-27 - Added Hostname in Message
 - 2023-02-22 - Added support for multiple UDM versions 1.x, 2.x and 3.x
 
 ## Persistence on Reboot
