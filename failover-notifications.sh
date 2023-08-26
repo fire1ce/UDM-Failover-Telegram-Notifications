@@ -36,7 +36,7 @@ get_current_wan_interface_external_ip() {
 interface_name=$(get_current_wan_interface_name)
 
 # Prints the current WAN interface name and ip address
-start_message="Starting failover notifications. Current interface: $(get_current_wan_interface_name) with external IP: $(get_current_wan_interface_external_ip)"
+start_message="$(hostname): Starting failover notifications. Current interface: $(get_current_wan_interface_name) with external IP: $(get_current_wan_interface_external_ip)"
 echo $start_message
 
 # Send the start message to Telegram
@@ -78,7 +78,7 @@ while true; do
       sleep $run_interval
       continue
     fi
-    message="Failover: WAN interface changed from $interface_name to: $current_wan_interface_name with external IP: $current_wan_interface_external_ip"
+    message="$(hostname): Failover: WAN interface changed from $interface_name to: $current_wan_interface_name with external IP: $current_wan_interface_external_ip"
     echo $message
     telegram_notification=$(
       curl -s -X GET "https://api.telegram.org/bot${telegram_bot_API_Token}/sendMessage?chat_id=${telegram_chat_id}" \
